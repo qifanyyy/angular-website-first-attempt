@@ -1,0 +1,21 @@
+<label>server name</label>
+<!--two way binding-->
+<input type="text"
+       class="form-control" (input)="onUpdateServe($event)"
+>
+<!--<string interpolation-->
+<input type="text"
+       class="form-control" [(ngModel)]="serverName"
+>
+<input type="text"
+       class="form-control" [(ngModel)]="userName"
+>
+<button class="btn btn-primary" [disabled]="userName ===''" (click)="onUsername()" >change password</button>
+<p>{{userName}}</p>
+<p>{{serverName}}</p>
+<button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()" >add server</button>
+<p>{{serverifCreated}}</p>
+<p *ngIf="allowNewServer; else no_change">the new server {{serverName}} is created</p>
+<ng-template #no_change><p>no, no server is being created</p></ng-template>
+<p>server {{serverid}} is {{getServerStatus()}} </p>
+<label id ='first'></label>

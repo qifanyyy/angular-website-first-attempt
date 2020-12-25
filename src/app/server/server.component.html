@@ -1,0 +1,10 @@
+<p [ngStyle]="{backgroundColor : onGetColor(), color : onGetTextColor()}"
+   [ngClass]="{online: serverStatus ==='ONLINE'}">
+  the server component status is {{serverStatus}}</p>
+
+
+<button class="btn btn-primary" (click)="onToggleDisplay()" >Display Details</button>
+<p *ngIf="buttonClicked">Password: Tuna</p>
+<div *ngFor="let LogItem of Log;let i = index" [ngStyle]="{background: i >= 5 ? 'blue' : 'transparent' }"
+     [ngClass]="{online: LogItem > 5}">{{LogItem}}</div>
+
