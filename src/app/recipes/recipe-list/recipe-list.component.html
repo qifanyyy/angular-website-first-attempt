@@ -7,7 +7,7 @@
 
 <div class="row">
   <div class="col-xs-12" >
-    <a href="#" class="list-group-item clearfix"  *ngFor="let recipe of recipes">
+    <a href="#" class="list-group-item clearfix"  *ngFor="let recipe of recipes;let i=index" (click) ='onRemoveRecipe(i)'>
       <div class="pull-left">
         <h4 class="list-group-item-heading">{{onDisplayRecipeName(recipe)}}</h4>
         <p class="list-group-item-text">{{onDisplayRecipeDescription(recipe)}}</p>
