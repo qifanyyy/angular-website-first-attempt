@@ -1,17 +1,16 @@
-<app-header></app-header>
+<app-header (selected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-xs-20">
-<!--      <app-header></app-header>-->
+<!--      <hr>-->
+<!--      <app-server></app-server>-->
       <hr>
-      <app-server></app-server>
+      <app-recipes *ngIf="loadedString ==='recipe'"></app-recipes>
+      <app-shopping-list *ngIf="loadedString ==='shopping-list'"></app-shopping-list>
       <hr>
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
-      <hr>
-      <app-warning-alert></app-warning-alert>
-      <app-sucess-alert></app-sucess-alert>
-      <app-servers></app-servers>
+<!--      <app-warning-alert></app-warning-alert>-->
+<!--      <app-sucess-alert></app-sucess-alert>-->
+<!--      <app-servers></app-servers>-->
     </div>
   </div>
 </div>
