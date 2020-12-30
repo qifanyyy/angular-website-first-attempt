@@ -1,9 +1,13 @@
 <p>recipes works!</p>
 <div class="row">
   <div class="col-md-5">
-    <app-recipe-list> </app-recipe-list>
+    <app-recipe-list (recipeFromRecipeList)="localRecipe= $event"> </app-recipe-list>
   </div>
   <div class="col-md-5">
-    <app-recipe-detail> </app-recipe-detail>
+    <app-recipe-detail *ngIf="localRecipe; else pleaseSelect"
+    [recipe]="localRecipe"> </app-recipe-detail>
+    <ng-template #pleaseSelect>
+      <p>Please select a recipe!!!!!!!!!</p>
+    </ng-template>
   </div>
 </div>

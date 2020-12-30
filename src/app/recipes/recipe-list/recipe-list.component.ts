@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, Output, EventEmitter} from '@angular/core';
 import {Recipe} from '../recipe.model';
 
 @Component({
@@ -9,7 +9,7 @@ import {Recipe} from '../recipe.model';
 export class RecipeListComponent implements OnInit {
   // tslint:disable-next-line:max-line-length
   recipes: Recipe[] = [(new Recipe('Western dishes', 'LGTM', 'https://cdn.tasteatlas.com/images/dishes/f4291f3e82f84c33a5997f801e8fb24f.jpg'))];
-
+  @Output() recipeFromRecipeList = new EventEmitter<Recipe>();
   constructor() { }
 
   ngOnInit(): void {
@@ -29,8 +29,12 @@ export class RecipeListComponent implements OnInit {
     this.recipes.push(new Recipe('Western dishes', 'LGTM', 'https://cdn.tasteatlas.com/images/dishes/f4291f3e82f84c33a5997f801e8fb24f.jpg'));
   }
   // tslint:disable-next-line:typedef
-  onRemoveRecipe(recipeId: number){
-    const position = recipeId + 1;
-    this.recipes.splice(position, 1);
+  onRecipeSelected(event){
+    this.recipeFromRecipeList.emit(event);
   }
+  // // tslint:disable-next-line:typedef
+  // onRemoveRecipe(recipeId: number){
+  //   const position = recipeId + 1;
+  //   this.recipes.splice(position, 1);
+  // }
 }
