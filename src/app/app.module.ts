@@ -13,6 +13,8 @@ import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingItemsComponent } from './shopping-list/shopping-items/shopping-items.component';
 import { RecipeDetailComponent } from './recipes/recipe-list/recipe-detail/recipe-detail.component';
 import { HeaderComponent } from './header/header.component';
+import { BetterHighlightDirective } from './better-highlight.directive';
+import { BetterHighlightWithRendererDirective } from './better-highlight-with-renderer.directive';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { HeaderComponent } from './header/header.component';
     ShoppingListComponent,
     ShoppingItemsComponent,
     RecipeDetailComponent,
-    HeaderComponent
+    HeaderComponent,
+    BetterHighlightDirective,
+    BetterHighlightWithRendererDirective
   ],
     imports: [
         BrowserModule,
